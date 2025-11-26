@@ -20,12 +20,30 @@
 
 int main(void) {
     int values[SIZE];
+    int max_value;
+    int max_index;
 
     // TODO: fill the array with user input using a for loop.
+    for (int i = 0; i < SIZE; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &values[i]);
+    }
 
     // TODO: find the largest number and its index using another loop.
+    // Initialize max_value and max_index with the first element of the array.
+    max_value = values[0];
+    max_index = 0;
+
+    // Loop through the rest of the array starting from index 1.
+    for (int i = 1; i < SIZE; i++) {
+        if (values[i] > max_value) {
+            max_value = values[i];
+            max_index = i;
+        }
+    }
 
     // TODO: print the results in a clear sentence.
+    printf("Largest value: %d at position %d\n", max_value, max_index);
 
     return 0;
 }
